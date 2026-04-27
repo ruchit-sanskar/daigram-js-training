@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini-project-1</title>
+    <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    #toolbar {
+      padding: 10px;
+      background: #eee;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    #canvas {
+      width: 100%;
+      height: calc(100vh - 50px);
+      background: #f9f9f9;
+      cursor: grab;
+    }
+
+    button {
+      padding: 6px 12px;
+      border: none;
+      background: #333;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #555;
+    }
+
+    #count {
+      margin-left: auto;
+      font-weight: bold;
+    }
+  </style>
+  </head>
+  <body>
+    <div id="toolbar">
+  <button id="fitBtn">Fit</button>
+  <button id="zoomInBtn">Zoom +</button>
+  <button id="zoomOutBtn">Zoom -</button>
+  <button id="resetBtn">Reset</button>
+  <div id="count">Shapes: 0</div>
+</div>
+    <div id="canvas"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
