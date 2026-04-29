@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Shape Adder</title>
+
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      font-family: sans-serif;
+    }
+
+    #canvas {
+      width: 70%;
+      height: 100vh;
+      border-right: 2px solid #ccc;
+    }
+
+    #panel {
+      width: 30%;
+      padding: 16px;
+      background: #f5f5f5;
+    }
+
+    input, button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+    }
+
+    #status {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    #list {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="canvas"></div>
+
+<div id="panel">
+  <h3>Dynamic Shape Adder</h3>
+
+  <input id="shapeId" placeholder="Enter shape id"/>
+
+  <button id="addBtn">Add Shape</button>
+  <button id="removeBtn">Remove Shape</button>
+  <button id="connectBtn">Connect last 2</button>
+
+  <div id="status">Shapes: 0 | Connections: 0</div>
+  <div id="list"></div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
