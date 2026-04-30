@@ -118,15 +118,34 @@ canvas.addConnection(conn2, root);
 canvas.zoom("fit-viewport");
 
 //  Button zoom (200%)
+
+// Zoom button (200%) with dynamic center
 document.querySelector("#zoomBtn").addEventListener("click", () => {
-  canvas.zoom(2);
-  const viewbox = canvas.viewbox();
-      
-      canvas.viewbox({
-        x: 370 - (viewbox.width / 2),
-        y: 130 - (viewbox.height / 2),
-        width: viewbox.width,
-        height: viewbox.height
-      });
+
+  const shapes = elementRegistry.filter(el =>
+    !el.waypoints && el.id !== "root"
+  );
+
+  if (!shapes.length) return;
+
+  // calculate bounding box
+  let minX = Infinity, minY = Infinity;
+  let maxX = -Infinity, maxY = -Infinity;
+
+  shapes.forEach(s => {
+    minX = Math.min(minX, s.x);
+    minY = Math.min(minY, s.y);
+    maxX = Math.max(maxX, s.x + s.width);
+    maxY = Math.max(maxY, s.y + s.height);
+  });
+
+  // center of all shapes
+  const centerX = (minX + maxX) / 2;
+  const centerY = (minY + maxY) / 2;
+
+  canvas.zoom(2, {
+    x: centerX,
+    y: centerY
+  });
 
 });
