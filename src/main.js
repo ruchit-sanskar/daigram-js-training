@@ -1,5 +1,5 @@
-import Diagram from 'https://esm.sh/diagram-js@14.0.0';
-import CoreModule from 'https://esm.sh/diagram-js@14.0.0/lib/core';
+import Diagram from 'diagram-js';
+import CoreModule from 'diagram-js/lib/core';
 
 function CustomRenderer(eventBus) {
   // Render Shapes
